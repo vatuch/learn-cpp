@@ -26,7 +26,7 @@ void Date(unsigned short day, unsigned short month, unsigned short year) {
     cout << year << " ";
 }
 
-void Draw(struct Record) {
+void Draw(struct Record *records) {
     int month = 78 + 9;
     cout << endl;
     cout << "|"; cout.width(65); cout.fill('-'); cout << "|" << endl;
@@ -47,9 +47,10 @@ void Draw(struct Record) {
         cout << left << "|"; cout.width(11); cout << left << records[i].year;
         cout << left << "|"; cout.width(8); cout << left << records[i].symbol;
         cout << left << "|";
+        Date(records[i].date.day, records[i].date.month, records[i].date.year);
     }
 
-    Date(records[i].date.day, records[i].date.month, records[i].date.year, 24);
+    
     cout << "|" << endl;
     cout.width(65); cout.fill(' '); cout << left << "|Примечание: Х - художественная литература;"; cout << "|" << endl;
     cout.width(65); cout.fill(' ');  cout << "|У - учебная литература; С - справочная литература";  cout << "|" << endl;
